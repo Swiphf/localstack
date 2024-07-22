@@ -44,17 +44,8 @@ tflocal apply
 ### 4. Use Postman to test the application 
 In this step you should use postman (or any other tool of your choice) and send a POST request to the publisher1 service.
 The request should contain the following json body:
-```
-{
- "data": {
- "email_subject" : "Happy new year!",
- "email_sender" : "John doe",
- "email_timestream": "1693561101",
- "email_content": "Just want to say... Happy new year!!!"
- },
- "token" : "$DJISA<$#45ex3RtYr"
-}
-```
+
+![Screenshot](images/postman.png)
 
 ### 5. Validate the target S3
 Now, (after a minimum of 10 seconds) you should check the S3 bucket to see if there is a new file corresponding your "timestream" field in the json.
