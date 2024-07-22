@@ -5,6 +5,16 @@ This repo will also contain the docker-compose.yaml file used to set up the thre
 
 "microservice1" will be referred to here as "publisher1", "microservice2" will be referred to here as "puller2"
 
+### About the code repos
+- publisher1: https://github.com/Swiphf/publisher1
+- puller2: https://github.com/Swiphf/puller2
+
+I have chosen Github Actions as a CI tool and Python and Flask for the containers.
+In each repo there is an explanation on how to trigger the CI as well as the entire source code.
+The images will be uploaded to a public repo in Dockerhub.
+
+---
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed on your local machine:
