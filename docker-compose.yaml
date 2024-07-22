@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  localstack:
+    container_name: localstack
+    image: localstack/localstack:3.5.0
+    ports:
+      - "127.0.0.1:4566:4566"
+      - "127.0.0.1:4510-4559:4510-4559"
+    networks:
+      - localstack-network
+
+  puller2:
+    depends_on:
+      - localstack
+    container_name: puller2
+    image: swiphfido/puller2:latest
+    ports:
+      - "5001:5000"
+    environment:
+      AWS_ACCESS_KEY_ID: mock_access_key
+      AWS_SECRET_ACCESS_KEY: mock_secret_key
+      REGION_NAME: eu-west-1
+      ENDPOINTS_URL: http://localstack:4566
+      QUEUE_URL: http://localhost:4566/000000000000/my-queue
+      BUCKET_NAME: my-bucket
+    networks:
+      - localstack-network
+
+  publisher1:
+    depends_on:
+      - localstack
+    container_name: publisher1
+    image: swiphfido/publisher1:latest
+    ports:
+      - "5000:5000"
+    environment:
+      AWS_ACCESS_KEY_ID: mock_access_key
+      AWS_SECRET_ACCESS_KEY: mock_secret_key
+      REGION_NAME: eu-west-1
+      ENDPOINTS_URL: http://localstack:4566
+      QUEUE_URL: http://localstack:4566/000000000000/my-queue
+    networks:
+      - localstack-network
+
+networks:
+  localstack-network:
+    external: true
