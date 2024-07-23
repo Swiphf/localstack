@@ -12,6 +12,5 @@ provider "aws" {
   endpoints {
     s3    = "http://s3.localhost.localstack.cloud:4566"
     sqs   = "http://localhost:4566"
-    ec2   = "http://localhost:4566"
   }
 }
