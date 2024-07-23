@@ -33,7 +33,7 @@ Before you begin, ensure you have the following installed on your local machine:
 
 ```sh
 git clone https://github.com/swiphf/localstack.git
-cd localstack-tf
+cd localstack
 ```
 
 ### 2. Run the containers
