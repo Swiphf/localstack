@@ -1,4 +1,4 @@
-# Localstack-TF
+# Localstack
 
 This repo's purpose is to store the Terraform infrastructure used in the assignment.
 This repo will also contain the docker-compose.yaml file used to set up the three containers: the localstack, the publisher and the puller.
@@ -32,7 +32,7 @@ Before you begin, ensure you have the following installed on your local machine:
 ### 1. Clone the Repository
 
 ```sh
-git clone https://github.com/swiphf/localstack-tf.git
+git clone https://github.com/swiphf/localstack.git
 cd localstack-tf
 ```
 
